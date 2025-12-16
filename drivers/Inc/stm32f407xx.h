@@ -106,5 +106,37 @@
 #define HASH							AHB2_BASEADDR + 0x60400
 #define RNG								AHB2_BASEADDR + 0x60800
 
+/*
+*   Peripheral Registers Struct Definition for GPIO
+*/
+typedef struct 
+{
+    uint32_t MODER;
+    uint32_t OTYPER;
+    uint32_t OSPEEDR;
+    uint32_t PUPDR;
+    uint32_t IDR;
+    uint32_t ODR;
+    uint32_t BSRR;
+    uint32_t LCKR;
+    uint32_t AF[2];
+
+} GPIO_RegDef_t;
+
+
+/*
+* Macros for GPIO Peripherals
+*/
+#define GPIOA = ((GPIO_RegDef_t*)GPIOA_BASEADDR)
+#define GPIOB = ((GPIO_RegDef_t*)GPIOB_BASEADDR)
+#define GPIOC = ((GPIO_RegDef_t*)GPIOC_BASEADDR)
+#define GPIOD = ((GPIO_RegDef_t*)GPIOD_BASEADDR)
+#define GPIOE = ((GPIO_RegDef_t*)GPIOE_BASEADDR)
+#define GPIOF = ((GPIO_RegDef_t*)GPIOF_BASEADDR)
+#define GPIOG = ((GPIO_RegDef_t*)GPIOG_BASEADDR)
+#define GPIOH = ((GPIO_RegDef_t*)GPIOH_BASEADDR)
+#define GPIOI = ((GPIO_RegDef_t*)GPIOI_BASEADDR)
+#define GPIOJ = ((GPIO_RegDef_t*)GPIOJ_BASEADDR)
+#define GPIOK = ((GPIO_RegDef_t*)GPIOK_BASEADDR)
 
 #endif /* STM32F407XX_H_ */
