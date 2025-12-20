@@ -8,7 +8,8 @@
 #ifndef STM32F407XX_H_
 #define STM32F407XX_H_
 
-#define EN                      1
+#define ENABLE                  1
+#define DISABLE                 0
 
 #define FLASH_BASEADDR
 #define SRAM1_BASEADDR			0x20000000U

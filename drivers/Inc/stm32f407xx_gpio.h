@@ -33,8 +33,8 @@ typedef struct
 /*
 * Peripheral Clock Setup
 */
-void GPIO_PeriClockCtrl(void);
-void GPIO_PeriClockCtrl(GPIO_RegDef_t *pGPIOx, uint8_t En);
+void GPIO_PeriClkCtrl(void);
+void GPIO_PeriClkCtrl(GPIO_RegDef_t *pGPIOx, uint8_t En);
 
 /*
 * Init and De-init
@@ -46,14 +46,14 @@ void GPIO_DeInit(GPIO_Handle_t *pGPIOHandle);
 * Data read and write
 */
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
-unit16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx, uint16_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx, uint16_t PinNumber);
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Val);
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint8_t PinNUmber);
-void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, unit8_t PinNumber);
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
 
 /*
 * IRQ Configuration and ISR handling
 */
 void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t En);
-void GPIO_IRQHandling(unit8_t PinNumber);
+void GPIO_IRQHandling(uint8_t PinNumber);
 
