@@ -85,7 +85,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
 
     //5 Configure the alt functionality
     if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN){
-        //
+        
         uint8_t temp1, temp2;
 
         temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 8;
@@ -93,4 +93,19 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
 
         pGPIOHandle->pGPIOx->AF[temp1] |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFuncMode << (4 * temp2));
     }
+}
+
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){
+    if (pGPIOx == GPIOA) GPIOA_REG_RST();
+    else if (pGPIOx == GPIOB) GPIOB_REG_RST();
+    else if (pGPIOx == GPIOC) GPIOC_REG_RST();
+    else if (pGPIOx == GPIOD) GPIOD_REG_RST();
+    else if (pGPIOx == GPIOE) GPIOE_REG_RST();
+    else if (pGPIOx == GPIOF) GPIOF_REG_RST();
+    else if (pGPIOx == GPIOG) GPIOG_REG_RST();
+    else if (pGPIOx == GPIOH) GPIOH_REG_RST();
+    else if (pGPIOx == GPIOI) GPIOI_REG_RST();
+    else if (pGPIOx == GPIOJ) GPIOJ_REG_RST();
+    else if (pGPIOx == GPIOK) GPIOK_REG_RST();
+
 }
