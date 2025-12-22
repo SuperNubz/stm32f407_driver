@@ -24,6 +24,36 @@ typedef struct
 
 } GPIO_Handle_t;
 
+/*
+* GPIO Pin Modes
+*/
+typedef enum {
+    GPIO_MODE_INPUT = 0,
+    GPIO_MODE_OUTPUT = 1,
+    GPIO_MODE_ALTFN = 2,
+    GPIO_MODE_ANALOG = 3
+
+} GPIO_PinMode_t;
+
+/*
+* GPIO Output Type 
+*/
+typedef enum{
+
+    GPIO_OPTYPE_PUSHPULL = 0,
+    GPIO_OPTYPE_OPENDRAIN = 1,
+}GPIO_OutputType_t;
+
+/*
+* GPIO Output Type 
+*/
+typedef enum{
+
+    GPIO_OPSPEED_LOW = 0,
+    GPIO_OPSPEED_MEDIUM = 1,
+    GPIO_OPSPEED_HIGH = 2,
+    GPIO_OPSPEED_VERYHIGH = 3,
+}GPIO_OutputSpeed_t;
 
 /***********************************************
 * APIs supported by this driver
