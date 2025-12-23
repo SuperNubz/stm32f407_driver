@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include "stm32f407xx.h"
 
 /*
@@ -63,7 +64,6 @@ typedef enum{
 /*
 * Peripheral Clock Setup
 */
-void GPIO_PeriClkCtrl(void);
 void GPIO_PeriClkCtrl(GPIO_RegDef_t *pGPIOx, uint8_t En);
 
 /*
