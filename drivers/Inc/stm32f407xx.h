@@ -4,6 +4,7 @@
  *  Created on: Dec 2, 2025
  *      Author: preus
  */
+#include <stdint.h>
 
 #ifndef STM32F407XX_H_
 #define STM32F407XX_H_
@@ -189,62 +190,62 @@ typedef struct
 /*
 * Macros for Enabling GPIOx peripheral clock
 */
-#define GPIOA_PCLK_EN   (RCC->AHB1ENR |= (1 << 0))
-#define GPIOB_PCLK_EN   (RCC->AHB1ENR |= (1 << 1))
-#define GPIOC_PCLK_EN   (RCC->AHB1ENR |= (1 << 2))
-#define GPIOD_PCLK_EN   (RCC->AHB1ENR |= (1 << 3))
-#define GPIOE_PCLK_EN   (RCC->AHB1ENR |= (1 << 4))
-#define GPIOF_PCLK_EN   (RCC->AHB1ENR |= (1 << 5))
-#define GPIOG_PCLK_EN   (RCC->AHB1ENR |= (1 << 6))
-#define GPIOH_PCLK_EN   (RCC->AHB1ENR |= (1 << 7))
-#define GPIOI_PCLK_EN   (RCC->AHB1ENR |= (1 << 8))
-#define GPIOJ_PCLK_EN   (RCC->AHB1ENR |= (1 << 9))
-#define GPIOK_PCLK_EN   (RCC->AHB1ENR |= (1 << 10))
+#define GPIOA_PCLK_EN()   (RCC->AHB1ENR |= (1 << 0))
+#define GPIOB_PCLK_EN()   (RCC->AHB1ENR |= (1 << 1))
+#define GPIOC_PCLK_EN()   (RCC->AHB1ENR |= (1 << 2))
+#define GPIOD_PCLK_EN()   (RCC->AHB1ENR |= (1 << 3))
+#define GPIOE_PCLK_EN()   (RCC->AHB1ENR |= (1 << 4))
+#define GPIOF_PCLK_EN()   (RCC->AHB1ENR |= (1 << 5))
+#define GPIOG_PCLK_EN()   (RCC->AHB1ENR |= (1 << 6))
+#define GPIOH_PCLK_EN()   (RCC->AHB1ENR |= (1 << 7))
+#define GPIOI_PCLK_EN()   (RCC->AHB1ENR |= (1 << 8))
+#define GPIOJ_PCLK_EN()   (RCC->AHB1ENR |= (1 << 9))
+#define GPIOK_PCLK_EN()   (RCC->AHB1ENR |= (1 << 10))
 
 /*
 * Macros for Enabling I2Cx peripheral clock
 */
-#define I2C1_PCLK_EN   (RCC->APB1ENR |= (1 << 21))
-#define I2C2_PCLK_EN   (RCC->APB1ENR |= (1 << 22))
-#define I2C3_PCLK_EN   (RCC->APB1ENR |= (1 << 23))
+#define I2C1_PCLK_EN()   (RCC->APB1ENR |= (1 << 21))
+#define I2C2_PCLK_EN()   (RCC->APB1ENR |= (1 << 22))
+#define I2C3_PCLK_EN()   (RCC->APB1ENR |= (1 << 23))
 
 /*
 * Macros for Enabling SPIx peripheral clock
 */
-#define SPI1_PCLK_EN   (RCC->APB2ENR |= (1 << 12))
-#define SPI4_PCLK_EN   (RCC->APB2ENR |= (1 << 13))
-#define SPI5_PCLK_EN   (RCC->APB2ENR |= (1 << 20))
-#define SPI6_PCLK_EN   (RCC->APB2ENR |= (1 << 21))
-#define SPI2_PCLK_EN   (RCC->APB1ENR |= (1 << 14))
-#define SPI3_PCLK_EN   (RCC->APB1ENR |= (1 << 15))
+#define SPI1_PCLK_EN()   (RCC->APB2ENR |= (1 << 12))
+#define SPI4_PCLK_EN()   (RCC->APB2ENR |= (1 << 13))
+#define SPI5_PCLK_EN()   (RCC->APB2ENR |= (1 << 20))
+#define SPI6_PCLK_EN()   (RCC->APB2ENR |= (1 << 21))
+#define SPI2_PCLK_EN()   (RCC->APB1ENR |= (1 << 14))
+#define SPI3_PCLK_EN()   (RCC->APB1ENR |= (1 << 15))
 
 /*
 * Macros for Enabling USARTx peripheral clock
 */
-#define USART2_PCLK_EN   (RCC->APB1ENR |= (1 << 17))
-#define USART3_PCLK_EN   (RCC->APB1ENR |= (1 << 18))
-#define USART1_PCLK_EN   (RCC->APB2ENR |= (1 << 4))
-#define USART6_PCLK_EN   (RCC->APB2ENR |= (1 << 6))
+#define USART2_PCLK_EN()   (RCC->APB1ENR |= (1 << 17))
+#define USART3_PCLK_EN()   (RCC->APB1ENR |= (1 << 18))
+#define USART1_PCLK_EN()   (RCC->APB2ENR |= (1 << 4))
+#define USART6_PCLK_EN()   (RCC->APB2ENR |= (1 << 6))
 
 /*
 * Macros for Enabling SYSCFG peripheral clock
 */
-#define SYSCFG_PCLK_EN   (RCC->APB2ENR |= (1 << 6))
+#define SYSCFG_PCLK_EN()   (RCC->APB2ENR |= (1 << 6))
 
 /*
 * Macros for DISABLING GPIOx peripheral clock
 */
-#define GPIOA_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 0))
-#define GPIOB_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 1))
-#define GPIOC_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 2))
-#define GPIOD_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 3))
-#define GPIOE_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 4))
-#define GPIOF_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 5))
-#define GPIOG_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 6))
-#define GPIOH_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 7))
-#define GPIOI_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 8))
-#define GPIOJ_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 9))
-#define GPIOK_PCLK_DIS   (RCC->AHB1ENR &= ~(1 << 10))
+#define GPIOA_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 0))
+#define GPIOB_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 1))
+#define GPIOC_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 2))
+#define GPIOD_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 3))
+#define GPIOE_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 4))
+#define GPIOF_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 5))
+#define GPIOG_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 6))
+#define GPIOH_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 7))
+#define GPIOI_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 8))
+#define GPIOJ_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 9))
+#define GPIOK_PCLK_DIS()   (RCC->AHB1ENR &= ~(1 << 10))
 
 /*
 * Macros for RESETING GPIO Peripheral clock

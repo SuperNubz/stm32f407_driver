@@ -2,6 +2,7 @@
 #define STM32F407XX_GPIO_H_
 
 #include "stm32f407xx_gpio.h"
+#include <stdint.h>
 
 void GPIO_PeriClkCtrl(GPIO_RegDef_t *pGPIOx, uint8_t En){
     if (En == ENABLE){
@@ -109,3 +110,10 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){
     else if (pGPIOx == GPIOK) GPIOK_REG_RST();
 
 }
+
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber){
+	pGPIOx->ODR = pGPIOx->ODR ^ (1 << PinNumber);
+}
+
+
+#endif
